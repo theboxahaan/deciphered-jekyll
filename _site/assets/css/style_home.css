@@ -1,0 +1,33 @@
+.logo{
+    height: 100px;
+    filter: grayscale();
+}
+
+.news-item.row{
+    padding: 0.5em;
+    /* background: #eee; */
+    /* background: #ddd; */
+    background: #dad5d2;
+    overflow: hidden;
+}
+.news-item > .row{
+    padding: 0.8em;
+    background: #f5f5f5;
+    font-size: 1em;
+    color: #333;
+}
+
+.twitter-feed{
+    overflow: scroll;
+    border: 1px solid #eee;
+}
+
+.motivation{
+    border-left: 1px solid  #333  ;
+}
+
+.tag{
+    position: absolute;
+    right: 1em;
+    bottom: 0;
+}

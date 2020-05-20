@@ -1,0 +1,100 @@
+.index{
+    width: 100%;
+    /* background: #f223; */
+    position: fixed;
+    width: 17.6%;
+    margin-left: 0;
+
+}
+
+.sidebar{
+    position: fixed;
+    width: 100%;
+}
+
+.index-list{
+    
+    list-style: none;
+    transition: 1s ;
+}
+.index-item.active-index{
+    color: rgb(92, 92, 92);
+    /* color: rgb(206, 55, 55); */
+    font-size: xx-large;
+    border-bottom: 1px solid #eee;
+}
+
+.index-item{
+    border-left: 2px solid #eee;
+    border-bottom: 1px solid #ffffff;
+    padding: 1rem;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    transition-property: font-size color border-bottom;
+    transition-duration: 0.3s;
+    color: rgb(92, 92, 92);
+    margin: 0px;
+}
+
+.index-item:hover{
+    color: rgb(159, 159, 159);
+
+}
+
+.index-spacer{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: rgb(228, 51, 51);
+}
+
+.content{
+    min-height: 25vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    /* height: 80vh; */
+    padding-top: 3em;
+    padding-bottom: 3em;
+    border-bottom: 2px solid rgb(130, 129, 129);
+    /* background: #aa45; */
+}
+
+.small{
+    font-size: 0.7em;
+    padding: 0;
+    margin: 0;
+}
+
+.journal{
+    text-transform: uppercase;
+}
+.btn{
+    padding: 0.3em;
+    margin-right: 1em;
+    color: white;
+    font-weight: 600;
+    font-size: 0.6em;
+    border-radius: 0.2em;
+}
+.btn.red{
+    background: red;
+}
+
+.btn.green{
+    background: green;
+}
+
+.btn.purple{
+    background: purple;
+}
+
+.content-entry{
+    width: 100%;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 1.5px solid #eee;
+}

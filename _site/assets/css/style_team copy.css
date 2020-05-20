@@ -1,0 +1,90 @@
+.profile{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-sizing: border-box;
+	box-shadow: -1px 7px 18px -10px grey;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	max-height: 420px;
+	
+}
+
+.profile > img{
+	object-fit: cover;
+	height: 330px;
+	width: 100%;
+	transition-duration: 0.5s;
+	transition-property: filter;
+}
+
+.profile-name{
+	min-width: 100%;
+	
+    margin-bottom: 0.3em;
+	/* text-transform: uppercase; */
+	padding-left: 1.3em;
+	padding-top: 0.5em;
+	color: rgb(84, 84, 84);
+	background: white;
+	transition-duration: 0.4s;
+	transition-property: transform;
+	min-height: 420px;
+}
+
+.profile-name ul{
+	padding-bottom: 0;
+	margin-bottom: 1.5em;
+	line-height: 1.2em;
+}
+
+.profile-name > h3{
+	font-weight: 100;
+	padding: 0;
+	margin-bottom: 0.4rem;
+}
+
+.profile-name h3 span {
+	font-weight: 600;
+}
+.profile:hover > img{
+	filter: blur(6px);
+}
+.profile:hover > .profile-name {
+	transform: translateY(-10em);
+
+}
+
+.more{
+	border: 1px solid #eee;
+	margin: 0em;
+	padding: 0.5em;
+	transition-duration: 0.3s;
+	transition-property: background;
+}
+
+.more:hover{
+
+	background: #eee;
+	
+}
+
+.links{
+	display: flex;
+
+}
+.links > *{
+	margin-right: 1.3rem;
+}
+
+.links >  a i{
+	color: #bb3636;
+	font-size: 1.9rem; 
+	/* width: 1.8em; */
+	transition-duration: 0.3s;
+	transition-property: color;
+}
+
+.links > a i:hover{
+	color: #888;
+}
