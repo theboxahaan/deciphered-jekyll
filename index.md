@@ -29,7 +29,16 @@ order: 1
 <div class="row">
     <div class="spacer-small"></div>
 </div>
-
+<div class="row">
+<h1>Welcome to The Lab</h1>
+Very glad to have you here.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et odio nisi. Etiam rhoncus elementum dolor at viverra.
+Nam quis eros vitae lacus sagittis tristique. Integer iaculis pretium metus et maximus. Nunc condimentum,
+enim vitae ultricies vulputate, leo est sodales elit, sed pretium arcu nunc commodo odio. Donec eu tortor in arcu tempor tincidunt quis quis massa. Donec rutrum gravida aliquet.
+Nam quis eros vitae lacus sagittis tristique. Integer iaculis pretium metus et maximus. Nunc condimentum,
+enim vitae ultricies vulputate, leo est sodales elit, sed pretium arcu nunc commodo odio. Donec eu tortor in arcu tempor tincidunt quis quis massa. Donec rutrum gravida aliquet.
+</div>
+<div class="spacer-small"></div>
 <div class="row">
     <div class="intro seven columns">
         <h3 class="heading">News From The Lab</h3>
