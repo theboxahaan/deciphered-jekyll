@@ -5,7 +5,7 @@ css: ['/assets/css/style_home.css']
 layout: default
 order: 1
 ---
-
+{% include navbar.html %}
 <section class="header">
 <div class="row">
     <div class="five columns">
@@ -25,7 +25,7 @@ order: 1
     </div>
 </div>            
 </section>
-{% include navbar.html %}
+
 <div class="row">
     <div class="spacer-small"></div>
 </div>
@@ -42,13 +42,13 @@ enim vitae ultricies vulputate, leo est sodales elit, sed pretium arcu nunc comm
 <div class="row">
     <h3 class="heading">News From The Lab</h3>
     <div class="half columns">&nbsp;</div>
-    <div class="intro seven columns">
+    <div class="intro eight columns">
             {% include news.html %}
             <div class="row">
                 <div class="spacer"></div>
             </div>
     </div>
-    <div class="four columns">
+    <div class="three columns">
         <div style="float:right;">
             <a class="twitter-timeline" data-lang="en" data-width="22em" data-height="50em" data-theme="dark" href="https://twitter.com/decipheredLabs?ref_src=twsrc%5Etfw">Tweets by decipheredLabs</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
