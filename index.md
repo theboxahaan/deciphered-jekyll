@@ -5,7 +5,7 @@ css: ['/assets/css/style_home.css']
 layout: default
 order: 1
 ---
-{% include navbar.html %}
+<!-- {% include navbar.html %} -->
 <section class="header">
 <div class="row">
     <div class="five columns">
@@ -25,7 +25,7 @@ order: 1
     </div>
 </div>            
 </section>
-
+{% include navbar.html %}
 <div class="row">
     <div class="spacer-small"></div>
 </div>

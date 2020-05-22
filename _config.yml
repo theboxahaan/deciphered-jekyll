@@ -1,2 +1,8 @@
 name: de.ci.phe.red
 title: de.ci.phe.red
+collections_dir: site_collections
+collections:
+  research:
+    output: true
+  team:
+    output: true

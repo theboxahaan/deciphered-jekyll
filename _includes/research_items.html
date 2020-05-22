@@ -1,0 +1,16 @@
+<div class="row">
+    {% for research in {{site.research}} %}
+        <div class="research-item row">
+            <div class="four columns">
+                <img class="project-cover" src="{{research.image}}">
+            </div>
+            <div class="eight columns">
+                <h3 class="heading no-border">{{research.title}}</h3>
+                <div class="row">
+                    {{research.abstract | markdownify}}
+                </div>
+                <a class="button button-primary" href="{{research.url | absoluteurl}}">Explore</a> 
+            </div>
+        </div>
+    {% endfor %}
+</div>
