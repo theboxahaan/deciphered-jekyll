@@ -53,6 +53,21 @@
 </nav>
 <div class="spacer-small"></div>
 <h1>Lightweight Authentication in RFID Systems</h1>
+<p><em>loauth</em> is a lightweight extensible library designed to provide ease of implementations using challenge-response communication protocols.
+Written in python, we are actively looking at developers to port it for various hardware platforms. Below is a test snippet for the Base Class of the loauth authentication library.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+import hashlib
+import hmac as hm
+import Cijfer
+class test(Cijfer.cijfer):
+    def sign(self, key, msg):
+        return hm.new(key, msg, hashlib.sha256).digest()
+
+    def verify(self, key, msg, sign):
+        return hm.compare_digest(sign, hm.new(key, msg, hashlib.sha256).digest() )
+
+</code></pre></div></div>
+
     </div>
 
     <div class="spacer"></div>

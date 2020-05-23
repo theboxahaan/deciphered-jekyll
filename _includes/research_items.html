@@ -9,7 +9,13 @@
                 <div class="row">
                     {{research.abstract | markdownify}}
                 </div>
-                <a class="button button-primary" href="{{research.url | absoluteurl}}">Explore</a> 
+                <div class="row">
+                    <a class="button button-primary" href="{{research.url | absoluteurl}}">Explore</a>
+                    {% if research.github %}
+                    <!-- <a class="github-button" href="https://github.com/theboxahaan/loauth/" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="small" data-show-count="false" aria-label="Watch theboxahaan/loauth on GitHub">Fork</a> -->
+                    {% endif %}
+                </div>
+                
             </div>
         </div>
     {% endfor %}
