@@ -30,3 +30,9 @@ class test(Cijfer.cijfer):
         return hm.compare_digest(sign, hm.new(key, msg, hashlib.sha256).digest() )
 
 ```
+
+### In packet MathJax Support
+
+$$ \sum_{i=0}^n i = \frac{n(n+1)}{2}$$
+
+<h3 class="heading">Custom css Support also present</h3>
