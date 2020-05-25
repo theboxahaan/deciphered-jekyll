@@ -15,6 +15,9 @@ li{
     box-shadow: 4px 4px 6px -7px black;
 }
 
+h6{
+    display: inline-block;
+}
 
 .doi{
     background: #4ab19d;
@@ -22,29 +25,33 @@ li{
     color: #fff;
     padding: 0.2em;
 }
-.bib:hover .bibtext{
+.tooltip:hover .tooltext{
     visibility: visible;
     opacity: 1;
 }
-.bib{
+.tooltip{
+    /* position: relative; */
     display: inline-flex;
     vertical-align: middle;
+    box-shadow: 4px 4px 6px -7px black;
     /* padding: 0.1em;
     background: #4ab19d;
     border: 1px solid #4ab19d;
     color: white; */
 }
-.bibtext{
+.tooltext{
+    /* margin: -1em; */
     font-size: 0.8em;
     position: absolute;
     z-index: 1;
     visibility: hidden;
     white-space: pre-wrap;
-    background: #333;  
+    background:  #363636;  
     padding: 0.2em;  
-    color: #bbb;
+    color: #aaa;
     border-radius: 3px;
     opacity: 0;
-    -moz-transition-property: opacity;
-    transition-duration: 0.2s;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    
 }
