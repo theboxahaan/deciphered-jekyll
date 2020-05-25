@@ -5,7 +5,7 @@ css: ['/assets/css/style_home.css']
 layout: default
 order: 1
 ---
-<!-- {% include navbar.html %} -->
+{% include navbar.html %}
 <section class="header">
 <div class="row">
     <div class="five columns">
@@ -25,7 +25,7 @@ order: 1
     </div>
 </div>            
 </section>
-{% include navbar.html %}
+<!-- {% include navbar.html %} -->
 <div class="row">
     <div class="spacer-small"></div>
 </div>
@@ -45,7 +45,7 @@ enim vitae ultricies vulputate, leo est sodales elit, sed pretium arcu nunc comm
     <div class="intro eight columns">
             {% include news.html %}
             <div class="row">
-                <div class="spacer"></div>
+                <div class="spacer-small"></div>
             </div>
     </div>
     <div class="three columns">

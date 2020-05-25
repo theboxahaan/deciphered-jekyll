@@ -1,0 +1,11 @@
+---
+---
+<!-- Currently only supports @inproceedings and @articles -->
+<div class="pubs-item row">
+    <h6 class=" no-margin  no-border"><em>{{entry.title | upcase}}</em></h6>
+    <p class="no-margin small">{{entry.author}} ▲ <span class="no-margin heading small"> 
+        {% if entry.journal %}{{entry.journal}}{% endif %}{% if entry.booktitle %}{{entry.booktitle}}{% endif %},
+         Volume:{{entry.volume}}-{{entry.number}}, Pages:{{entry.pages}}, {{entry.year}}</span></p>
+    {% if entry.doi %}<code class="doi">DOI:{{entry.doi}}</code> {% endif %}
+    <span class="bib"><img src="/assets/images/bib16x16.png"><pre class="bibtext">{{entry.bibtex}}</pre></span>
+</div>

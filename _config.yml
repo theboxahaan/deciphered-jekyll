@@ -6,3 +6,9 @@ collections:
     output: true
   team:
     output: true
+
+scholar:
+  # style: apa
+  group_by: year
+  group_order: descending
+  bibliography_template: bib
