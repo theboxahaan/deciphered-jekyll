@@ -2,8 +2,8 @@
 ---
 <!-- Currently only supports @inproceedings and @articles -->
 <div class="pubs-item row">
-    {% if entry.doi %}<span class="tooltip"><img src="/assets/images/doi16x16.png"><pre class="tooltext">{{entry.doi}}</pre></span> {% endif %}
-    <span class="tooltip"><img style="margin-right: 0.5em;" src="/assets/images/bib16x16.png"><pre class="tooltext">{{entry.bibtex}}</pre></span><h6 class=" no-margin  no-border"><em>{{entry.title | upcase}}</em></h6>
+    {% if entry.doi %}<span class="tooltip"><img src="/assets/images/doi16x16.png"><pre class="tooltext"><a href="{{entry.doi | prepend: "https://doi.org/"}}">{{entry.doi | prepend: "https://doi.org/"}}</a></pre></span> {% endif %}
+    <span class="tooltip"><img style="margin-right: 0.5em;" src="/assets/images/bib16x16.png"><pre class="tooltext">{{entry.bibtex}}</pre></span><h6 class=" no-margin  no-border"><strong>{{entry.title | upcase}}</strong></h6>
 
     <p class="no-margin small">{{entry.author}} ▲ <span class="no-margin heading small"> 
         {% if entry.journal %}{{entry.journal}}{% endif %}{% if entry.booktitle %}{{entry.booktitle}}{% endif %},
