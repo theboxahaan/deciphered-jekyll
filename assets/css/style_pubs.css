@@ -60,9 +60,12 @@ a, a:hover{
 }
 
 .pubs-title{
-    background: #dad5d2;
-    border: 1px solid #dad5d2;
+    /* background: #dad5d2;
+    border: 1px solid #dad5d2; */
+    background-color: #efefef;
     font-family: monospace;
     font-size: 110%;
     color: #333;
+    padding: 0.2em;
+    border-radius: 0.2em;
 }
