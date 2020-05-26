@@ -62,7 +62,8 @@ a, a:hover{
 .pubs-title{
     /* background: #dad5d2;
     border: 1px solid #dad5d2; */
-    background-color: #efefef;
+    background-color: #eee;
+    box-shadow: 4px 4px 4px -5px;
     font-family: monospace;
     font-size: 110%;
     color: #333;
