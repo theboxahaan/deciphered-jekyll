@@ -59,3 +59,9 @@ a, a:hover{
     color: #4ab19d;
 }
 
+.pubs-title{
+    background: #dad5d2;
+    border: 1px solid #dad5d2;
+    
+    color: #333;
+}
