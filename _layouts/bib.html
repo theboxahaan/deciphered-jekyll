@@ -2,11 +2,15 @@
 ---
 <!-- Currently only supports @inproceedings and @articles -->
 <div class="pubs-item row">
-    {% if entry.doi %}<span class="tooltip"><img src="/assets/images/doi16x16.png"><pre class="tooltext"><a href="{{entry.doi | prepend: "https://doi.org/"}}">{{entry.doi | prepend: "https://doi.org/"}}</a></pre></span> {% endif %}
-    <span class="tooltip"><img style="margin-right: 0.5em;" src="/assets/images/bib16x16.png"><pre class="tooltext">{{entry.bibtex}}</pre></span><h6 class=" no-margin  no-border"><code class="pubs-title">{{entry.title | upcase}}</code></h6>
-
-    <p class="no-margin small">{{entry.author}} ▲ <span class="no-margin heading small"> 
+    <div class="row">
+        {% if entry.doi %}<span class="tooltip"><img src="/assets/images/doi16x16.png"><pre class="tooltext"><a href="{{entry.doi | prepend: "https://doi.org/"}}">{{entry.doi | prepend: "https://doi.org/"}}</a></pre></span> {% endif %}
+        <span class="tooltip"><img style="margin-right: 0.5em;" src="/assets/images/bib16x16.png"><pre class="tooltext">{{entry.bibtex}}</pre></span><h6 class=" no-margin  no-border"><span class="pubs-title">{{entry.title | upcase}}</span></h6>
+    </div>
+    <div class="row">
+        <p class="no-margin small">{{entry.author}} ▲ <span class="no-margin heading small"> 
         {% if entry.journal %}{{entry.journal}}{% endif %}{% if entry.booktitle %}{{entry.booktitle}}{% endif %},
-         Volume:{{entry.volume}}-{{entry.number}}, Pages:{{entry.pages}}, {{entry.year}}</span></p>
+        Volume:{{entry.volume}}-{{entry.number}}, Pages:{{entry.pages}}, {{entry.year}}</span></p>
+        
+    </div>
     <!-- {% if entry.doi %}<code class="doi">DOI:{{entry.doi}}</code> {% endif %} -->
 </div>
