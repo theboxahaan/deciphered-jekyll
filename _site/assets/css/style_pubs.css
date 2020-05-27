@@ -71,3 +71,21 @@ a, a:hover{
     padding: 0.2em;
     border-radius: 0.2em;
 }
+
+.tag{
+    font-size: 0.6em;
+    font-weight: 600;
+    padding: 0.3em;
+    border-radius: 0.3em;
+    color: #eee;
+    margin-left: 0.3em;
+   
+}
+.inproceedings{
+    /* background: #33539e; */
+    background: #308695;
+}
+.article{
+    /* background: #a5678e; */
+    background: #d45769;
+}

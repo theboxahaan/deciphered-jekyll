@@ -4,7 +4,8 @@
 <div class="pubs-item row">
     <div class="row">
         {% if entry.doi %}<span class="tooltip"><img src="/assets/images/doi16x16.png"><pre class="tooltext"><a href="{{entry.doi | prepend: "https://doi.org/"}}">{{entry.doi | prepend: "https://doi.org/"}}</a></pre></span> {% endif %}
-        <span class="tooltip"><img style="margin-right: 0.5em;" src="/assets/images/bib16x16.png"><pre class="tooltext">{{entry.bibtex}}</pre></span><h6 class=" no-margin  no-border"><span class="pubs-title">{{entry.title | upcase}}</span></h6>
+        <span class="tooltip"><img style="margin-right: 0.5em;" src="/assets/images/bib16x16.png"><pre class="tooltext">{{entry.bibtex}}</pre></span><h6 class=" no-margin  no-border">
+        <span class="pubs-title">{{entry.title | upcase}}</span></h6><span class="{{entry.type}} tag">{{entry.type | upcase}}</span>
     </div>
     <div class="row">
         <p class="no-margin small">{{entry.author}} ▲ <span class="no-margin heading small"> 
