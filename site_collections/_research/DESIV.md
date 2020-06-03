@@ -26,8 +26,8 @@ Here we mounted a *Differential Fault Attack (DFA)* on NIST LWC Round-1 candidat
 -  *Key size (k)* : 128 bits
 -  *Tag size (\|T\|)* : 256 bits
 -  *Nonce length (\|N\|)* : 128 bits
--  *Associated data length (\|A\|)* : any bit length >= 0
--  *Message length (\|M\|)* : any bit length >= 0
+-  *Associated data length (\|A\|)* : any bit length $$\geq 0$$
+-  *Message length (\|M\|)* : any bit length $$\geq 0$$
 -  *Underlying block cipher (E)* : Rijndael256 (parent of AES)
 
 #### General Structure of SIV.Enc (Encryption Algorithm of SIV-Rijndael256 AEAD)
