@@ -5,8 +5,8 @@ collections:
   research:
     output: true
   team:
-    output: true
-
+    output: true 
+    
 scholar:
   # style: apa
   group_by: year
