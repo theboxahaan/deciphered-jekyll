@@ -4,12 +4,11 @@ image: /assets/images/sivD.png
 
 abstract: |
     Here we mounted a *Differential Fault Attack (DFA)* on NIST LWC Round-1 candidate [**SIV-Rijndael256 AEAD**](https://csrc.nist.gov/CSRC/media/Projects/Lightweight-Cryptography/documents/round-1/spec-doc/SIV-Rijndael256-Spec.pdf) and thus we completely recovered the master-key inducing only one fault in the internal state of the SIV-Rijndael256 AEAD. Moreover, we have used key-scheduling algorithm of *Rijndael256* to make our DFA more stronger.
-    Follow our progress by starring out repo for the latest commits.
-
+    
 layout: research_layout
 ---
 
->- Joint Work: Aikata, Banashri Karmakar, Dhiman Saha
+>- Joint Work : Aikata, Banashri Karmakar, Dhiman Saha
 >- Accepted in **HOST 2020**
 
 Here we mounted a *Differential Fault Attack (DFA)* on NIST LWC Round-1 candidate [**SIV-Rijndael256 AEAD**](https://csrc.nist.gov/CSRC/media/Projects/Lightweight-Cryptography/documents/round-1/spec-doc/SIV-Rijndael256-Spec.pdf) and thus we completely recovered the master-key inducing only one fault in the internal state of the SIV-Rijndael256 AEAD. Moreover, we have used key-scheduling algorithm of *Rijndael256* to make our DFA more stronger.
