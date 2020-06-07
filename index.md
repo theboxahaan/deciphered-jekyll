@@ -9,7 +9,7 @@ order: 1
 <section class="header">
 <div class="row">
     <div class="five columns">
-        <h1>de.ci.phe.red<div class="name-small">LABS</div></h1>
+        <h1>de.ci.phe.red<div class="name-small">LAB</div></h1>
         <br>
         <h3 class="heading">plaintext  or <span class="typewriter" >'%#*@(*$)'</span></h3>
     </div>
@@ -18,9 +18,6 @@ order: 1
         <p>
         “We are the explorers of the infinity” - Tinkering our way through myriad problems of security that the digital world would anticipate. Welcome to <a href="http://de.ci.phe.red">de.ci.phe.red LAB</a> and help us make the virtual world a safer place to live in….
         </p>
-        <div class="tag">
-            <p class="heading small">"Random" Noise of .NET's <code>System.Random()</code> Call</p>
-        </div>
     </div>
 </div>            
 </section>
