@@ -1,7 +1,7 @@
 ---
 image: /assets/images/ahaan-small.jpg
 post: BTech. Class of 2020
-present: Quarantine 😷
+present: Lockdown'd 😷
 email: ahaand@iitbhilai.ac.in
 dabble: I choose to dabble in systems security. Hopefully attending Purdue this year ( ╯-_-)╯
 pos: alumni
