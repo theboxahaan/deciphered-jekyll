@@ -11,7 +11,7 @@ order: 1
     <div class="five columns">
         <h1>de.ci.phe.red<div class="name-small">LABS</div></h1>
         <br>
-        <h3 class="heading">plaintext  or <span class="typewriter">'%#*@(*$)'</span></h3>
+        <h3 class="heading">plaintext  or <span class="typewriter" >'%#*@(*$)'</span></h3>
     </div>
     <div class="motivation seven columns">
         <h3 class="heading">What We Do</h3>
@@ -29,8 +29,16 @@ order: 1
     <div class="spacer-small"></div>
 </div>
 <div class="row">
-<h1>Welcome to The Lab</h1>
-De.ci.phe.red LAB is a group of researchers focussed on pushing the frontiers of cybersecurity. Our members are affiliated to IIT Bhilai in the capacity of students and faculty. Established in 2019, under the guidance and mentorship of Dr Dhiman Saha, the members of de.ci.phe.red LAB published their first academic paper in Cryptanalysis between late 2019 to early 2020. Currently, de.ci.phe.red LAB is working on topics in Core Cryptography, RFID Security, Embedded Device Security. We are actively looking for new topics in cybersecurity to work on and are hence open to having research collaborations with other academic institutes on topics from cybersecurity including but not limited to the above.
+    <h1>Welcome to The Lab</h1>
+    <div class="row">
+        <div class="three columns">
+            <img width="100%" src="/assets/images/logo.jpg">
+        </div>
+        <div class="nine columns">
+        <b>de.ci.phe.red LAB</b> is a group of researchers focussed on pushing the frontiers of cybersecurity. Our members are affiliated to IIT Bhilai in the capacity of students and faculty. Established in 2019, under the guidance and mentorship of Dr Dhiman Saha, the members of de.ci.phe.red LAB published their first academic paper in Cryptanalysis between late 2019 to early 2020. Currently, de.ci.phe.red LAB is working on topics in Core Cryptography, RFID Security, Embedded Device Security. We are actively looking for new topics in cybersecurity to work on and are hence open to having research collaborations with other academic institutes on topics from cybersecurity including but not limited to the above.
+        </div>
+    </div>
+    
 </div>
 <div class="spacer-small"></div>
 <div class="news row">
