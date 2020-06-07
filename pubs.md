@@ -8,6 +8,5 @@ css: [/assets/css/style_pubs.css]
 
 <div class="spacer-small"></div>
 <h3 class="heading">Publications</h3>
-These are all the publications by de.ci.phe.red LABS
-
+##### They say *"Publish or Perish"*. We say *"Publish and Cherish"*
 {% bibliography %}
