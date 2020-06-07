@@ -7,7 +7,7 @@ collections:
   team:
     output: true 
    
-# url: http://de.ci.phe.red    
+url: http://de.ci.phe.red    
 scholar:
   # style: apa
   group_by: year
