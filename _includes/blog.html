@@ -1,0 +1,12 @@
+<div class="row">
+    {% for blog in site.categories.blog limit:4 %}
+        <div class="news-item row">
+            <h3 class="heading no-border">{{blog.date | date: '%B %d, %Y'}}</h3>
+            <div class="row">
+                {{blog.content}}
+            </div>
+        </div>
+    {% endfor %}
+    <div class="spacer-small"></div>
+    <!-- <a class="button" href="/contact">See All ...</a> -->
+</div>

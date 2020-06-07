@@ -6,3 +6,4 @@ css: [/assets/css/style_home.css]
 ---
 
 {% include navbar.html %}
+{% include blog.html %}
