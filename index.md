@@ -19,7 +19,7 @@ order: 1
         “We are the explorers of the infinity” - Tinkering our way through myriad problems of security that the digital world would anticipate. Welcome to de.ci.phe.red LAB and help us make the virtual world a safer place to live in….
         </p>
         <div class="tag">
-            <p class="heading small">"Random" Noise of .NET's System.Random() Call</p>
+            <p class="heading small">"Random" Noise of .NET's <code>System.Random()</code> Call</p>
         </div>
     </div>
 </div>            
