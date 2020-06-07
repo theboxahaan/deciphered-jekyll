@@ -5,7 +5,7 @@ ol{
     list-style: none;
 }
 
-li{
+.bibliography > li{
     margin: 0.3em;
 }
 

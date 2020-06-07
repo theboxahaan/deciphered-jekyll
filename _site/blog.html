@@ -22,7 +22,9 @@
 
    
 </head>
-    <title>Lightweight Authentication in RFID Systems | de.ci.phe.red</title>
+    <title>Blog | de.ci.phe.red</title>
+    
+    <link rel="stylesheet" href="/assets/css/style_home.css">
     
     
     
@@ -36,43 +38,21 @@
                 <ul class="navbar-list">
                     
                     
-                    <a href = "http://localhost:4000/" class="navbar-item"><li>HOME</li></a>
+                    <a href="http://localhost:4000/" class="navbar-item"><li>HOME</li></a>
                     
-                    <a href = "http://localhost:4000/research.html" class="navbar-item"><li>RESEARCH</li></a>
+                    <a href="http://localhost:4000/research.html" class="navbar-item"><li>RESEARCH</li></a>
                     
-                    <a href = "http://localhost:4000/team.html" class="navbar-item"><li>TEAM</li></a>
+                    <a href="http://localhost:4000/team.html" class="navbar-item"><li>TEAM</li></a>
                     
-                    <a href = "http://localhost:4000/pubs.html" class="navbar-item"><li>PUBLICATIONS</li></a>
+                    <a href="http://localhost:4000/pubs.html" class="navbar-item"><li>PUBLICATIONS</li></a>
                     
-                    <a href = "http://localhost:4000/contact.html" class="navbar-item"><li>CONTACT</li></a>
+                    <a href="http://localhost:4000/contact.html" class="navbar-item"><li>CONTACT</li></a>
                     
-                    <a href = "http://localhost:4000/blog.html" class="navbar-item"><li>BLOG</li></a>
+                    <a href="http://localhost:4000/blog.html" class="navbar-item"><li>BLOG</li></a>
                     
                 </ul>
             </div>
 </nav>
-<div class="spacer-small"></div>
-<h1>Lightweight Authentication in RFID Systems</h1>
-<p><em>loauth</em> is a lightweight extensible library designed to provide ease of implementations using challenge-response communication protocols.
-Written in python, we are actively looking at developers to port it for various hardware platforms. Below is a test snippet for the Base Class of the loauth authentication library.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-import hashlib
-import hmac as hm
-import Cijfer
-class test(Cijfer.cijfer):
-    def sign(self, key, msg):
-        return hm.new(key, msg, hashlib.sha256).digest()
-
-    def verify(self, key, msg, sign):
-        return hm.compare_digest(sign, hm.new(key, msg, hashlib.sha256).digest() )
-
-</code></pre></div></div>
-
-<h3 id="in-packet-mathjax-support">In packet MathJax Support</h3>
-
-\[\sum_{i=0}^n i = \frac{n(n+1)}{2}\]
-
-<h3 class="heading">Custom css Support also present</h3>
 
     </div>
 
