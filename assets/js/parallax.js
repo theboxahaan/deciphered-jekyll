@@ -12,7 +12,7 @@ $(document).ready(function(){
     }
 
     function parallax(){
-        console.log($('.header').css('background-position'))
+        // console.log($('.header').css('background-position'))
         $('.header').css('background-position', function(){ return ($window.scrollTop()/9).toString() +'px ,' + ($window.scrollTop()/9).toString() +'px' })
     }
 

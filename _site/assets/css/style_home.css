@@ -32,7 +32,9 @@
     right: 1em;
     bottom: 0;
 }
-
+.intro{
+    margin-left: 0;;
+}
 /* .typewriter{
     font-family: monospace;
     font-size: 130%;

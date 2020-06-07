@@ -6,4 +6,5 @@ layout: default
 ---
 
 {% include navbar.html %}
+<div class="spacer-small"></div>
 {% include blog.html %}
