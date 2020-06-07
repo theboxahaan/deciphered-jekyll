@@ -77,8 +77,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('/assets/images/netRandom-blurred.jpg');
+    background-image: url('/assets/images/netRandom.png');
     background-position: 0% 50%;
+    filter: invert(1);
    
 }
 
