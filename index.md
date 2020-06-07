@@ -14,9 +14,9 @@ order: 1
         <h3 class="heading">plaintext  or <span class="typewriter">'%#*@(*$)'</span></h3>
     </div>
     <div class="motivation seven columns">
-        <h3 class=" heading">What We Do</h3>
+        <h3 class="heading">What We Do</h3>
         <p>
-        “We are the explorers of the infinity” - Tinkering our way through myriad problems of security that the digital world would anticipate. Welcome to de.ci.phe.red LAB and help us make the virtual world a safer place to live in….
+        “We are the explorers of the infinity” - Tinkering our way through myriad problems of security that the digital world would anticipate. Welcome to <a href="http://de.ci.phe.red">de.ci.phe.red LAB</a> and help us make the virtual world a safer place to live in….
         </p>
         <div class="tag">
             <p class="heading small">"Random" Noise of .NET's <code>System.Random()</code> Call</p>
