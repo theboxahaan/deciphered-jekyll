@@ -9,7 +9,7 @@ css: [/assets/css/style_home.css]
 <div class="row">
     <div class="eight columns">
         <h3 class="heading">News</h3>
-        These is a history of all the news updates on de.ci.phe.red LABS' website.
+        These is a history of all the news updates from de.ci.phe.red LAB.
         <div class="spacer-small"></div> 
         <div class="row">
             {% for news in site.categories.news %}

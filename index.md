@@ -16,7 +16,7 @@ order: 1
     <div class="motivation seven columns">
         <h3 class="heading">What We Do</h3>
         <p>
-        “We are the explorers of the infinity” - Tinkering our way through myriad problems of security that the digital world would anticipate. Welcome to <a href="http://de.ci.phe.red">de.ci.phe.red LAB</a> and help us make the virtual world a safer place to live in….
+        “We are the explorers of the infinity” - Tinkering our way through myriad problems of security that the digital world would anticipate. 
         </p>
     </div>
 </div>            
@@ -63,7 +63,8 @@ order: 1
             Ongoing Research at our lab is focused towards all things security. If you are into security research, we are interested !!!
             Having said that, in broad terms we have the following projects going on at IIT Bhilai right now
             <ul>
-                <li>Cryptography</li>
+                <li>Lightweight Cryptography</li>
+                <li>Theoretical and Fault Based Cryptanalaysis</li>
                 <li>Lightweight Authentication Over RFID</li>
                 <li>Secure Boot in Embedded Devices</li>
             </ul>

@@ -8,5 +8,5 @@ css: [/assets/css/style_pubs.css]
 
 <div class="spacer-small"></div>
 <h3 class="heading">Publications</h3>
-##### They say *"Publish or Perish"*. We say *"Publish and Cherish"*
+###### They say *"Publish or Perish"*. We say *"Publish and Cherish"*. Below are some of the contributions of the lab to the world of Crypto.
 {% bibliography %}
