@@ -1,6 +1,6 @@
 ---
 image: /assets/images/sahiba-small.jpg
-post: PhD
+post: PhD Candidate
 email: sahibas@iitbhilai.ac.in
 dabble: Cryptanalytic Attacks, Lightweight Ciphers, Honey Encryption
 pos: current

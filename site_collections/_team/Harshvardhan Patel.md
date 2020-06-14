@@ -1,8 +1,9 @@
 ---
 image: /assets/images/harsh-small.jpg
-post: Alumnus, B.Tech, Class of 2020
+post: B.Tech, Class of 2020
+present: Engineer, Samsung Research Institute (SRI), Delhi
 email: harshvardhanp@iitbhilai.ac.in
-dabble: Cyber Security Using Machine Learning is what I am working on 🤪
+dabble: Cyber Security Using Machine Learning.
 pos: alumni
 layout: profile_layout
 
