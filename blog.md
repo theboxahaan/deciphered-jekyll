@@ -1,6 +1,6 @@
 ---
 title: Blog
-order: 6
+order: 5
 layout: default
 # css: [/assets/css/style_home.css]
 ---

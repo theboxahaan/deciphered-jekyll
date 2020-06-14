@@ -1,6 +1,6 @@
 ---
 title: Contact
-order: 5
+order: 6
 layout: default
 css: [/assets/css/style_home.css]
 ---
