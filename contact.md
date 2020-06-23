@@ -31,7 +31,8 @@ css: [/assets/css/style_home.css]
                 GEC Campus, Sejbahar,<br>
                 Raipur, Chhattisgarh<br>
                 India - 492015<br>
-                <b>Phone - </b>0771-2973618</p>    
+                <b>Phone - </b>0771-2973618<br>    
+                <b>Email - </b>get@de.ci.phe.red</p>    
         </div>
         <div class="spacer-small"></div>
         <div class="row">
