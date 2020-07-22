@@ -4,7 +4,7 @@
         <div class="news-item row">
             <h3 class="heading no-border">{{blog.date | date: '%B %d, %Y'}}</h3>
             <h1>{{blog.title}}</h1>
-            <p><i>Written By:</i> <span class="author">{{blog.author}}</span></p>
+            <p><span class="author">{{blog.author}}</span></p>
             <div class="row">
                 {{blog.excerpt}}
             </div>
@@ -28,7 +28,7 @@
                 <div class="blog-item row">
                     <!-- <h3 class="heading no-border">{{blog.date | date: '%B %d, %Y'}}</h3> -->
                     <h3 class="heading no-margin">{{blog.title}}</h3>
-                    <p><i>Written By:</i> <span class="author">{{blog.author}}</span></p>
+                    <p>By:<span class="author">{{blog.author}}</span></p>
                     <a class="button" href="{{blog.url}}">Read...</a>
                 </div>
             </div>
