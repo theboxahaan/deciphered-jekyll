@@ -1,3 +1,7 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
 .name-small{
     /*update for safari*/
     font-size: 0.2em;

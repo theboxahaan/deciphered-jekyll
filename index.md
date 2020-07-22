@@ -41,14 +41,14 @@ order: 1
 <div class="news row">
     <h3 class="heading">News From The Lab</h3>
     <!-- <div class="half columns">&nbsp;</div> -->
-    <div class="intro nine columns">
+    <div class="intro eight columns">
             {% include news.html %}
             <div class="row">
                 <div class="spacer-small"></div>
             </div>
     </div>
     <!-- <div class="one columns">&nbsp;</div>  -->
-    <div class="three columns">
+    <div class="four columns">
         <div style="float:right;">
             <a class="twitter-timeline" data-lang="en" data-width="22em" data-height="50em" data-theme="dark" href="https://twitter.com/decipheredLabs?ref_src=twsrc%5Etfw">Tweets by decipheredLabs</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
@@ -68,11 +68,13 @@ order: 1
                 <li>Lightweight Authentication Over RFID</li>
                 <li>Secure Boot in Embedded Devices</li>
             </ul>
-            Head Over to Our <b>under construction</b> Research Page for more information.
         </p>        
     </div>
-    <div class="five columns">
-        <img style=" margin:1em; float:right;max-width: 100%;" src="https://imgs.xkcd.com/comics/security.png">
+    <div style="margin-left: 0" class="six columns">
+        <figure>
+            <img style="float: right; max-width: 100%;" src="https://imgs.xkcd.com/comics/security.png">
+            <!-- <figcaption class=""><a href="xkcd.com">Image Taken From the xkcd Comics: Security</a></figcaption> -->
+        </figure>
     </div>
 </div>
 
