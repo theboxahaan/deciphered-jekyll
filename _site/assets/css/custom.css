@@ -115,8 +115,10 @@ body{
 
 code{
     /* background: #dad5d2; */
-    color: #bbb;
+    /* color: #bbb;
     background: #333;
-    border: 1px solid #333;
-
+    border: 1px solid #333; */
+    background: #e0e7ea;
+    border: 1px solid #e0e7ea;
+    color: #333;
 }

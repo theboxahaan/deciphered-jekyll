@@ -12,6 +12,7 @@ ol{
 .pubs-item.row{
     padding: 0.4em;
     background: #f5f5f5;
+    border: 1px solid #ddd;
     /* box-shadow: 4px 4px 6px -7px black; */
 }
 

@@ -32,7 +32,7 @@ css: [/assets/css/style_home.css]
                 Raipur, Chhattisgarh<br>
                 India - 492015<br>
                 <b>Phone - </b>0771-2973618<br>    
-                <b>Email - </b>get@de.ci.phe.red</p>    
+                <b>Email - </b><a href="mailto:get@de.ci.phe.red">get@de.ci.phe.red</a></p>    
         </div>
         <div class="spacer-small"></div>
         <div class="row">
