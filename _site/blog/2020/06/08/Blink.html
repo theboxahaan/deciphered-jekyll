@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<head>
+    <head>  
+    <meta charset="utf-8">
+   
+    <meta name="description" content>
+    <meta name="author" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:200,400,600&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/normalize.css">
+    <link rel="stylesheet" href="/assets/css/skeleton.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    
+    <!-- Mathjax Support -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          jax: ["input/TeX", "output/HTML-CSS"],
+          tex2jax: {
+            inlineMath: [ ['$', '$'], ["\\(", "\\)"] ],
+            displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+          //,
+          //displayAlign: "left",
+          //displayIndent: "2em"
+        });
+      </script>
+    <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="/assets/js/site.js"></script>
+
+   
+</head>
+    <title>Blink | de.ci.phe.red</title>
+    
+    <link rel="stylesheet" href="/assets/css/style_blog.css">
+    
+    
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-spacer"></div>
+<nav class="navbar">
+            <div class="container">
+                <ul class="navbar-list">
+                    
+                    
+                    <a href = "http://localhost:4000/" class="navbar-item"><li>HOME</li></a>
+                    
+                    <a href = "http://localhost:4000/research.html" class="navbar-item"><li>RESEARCH</li></a>
+                    
+                    <a href = "http://localhost:4000/team.html" class="navbar-item"><li>TEAM</li></a>
+                    
+                    <a href = "http://localhost:4000/pubs.html" class="navbar-item"><li>PUBLICATIONS</li></a>
+                    
+                    <a href = "http://localhost:4000/blog.html" class="navbar-item"><li>BLOG</li></a>
+                    
+                    <a href = "http://localhost:4000/contact.html" class="navbar-item"><li>CONTACT</li></a>
+                    
+                </ul>
+            </div>
+</nav>
+<div class="spacer-small"></div>
+<h3 class="heading">Jun 08, 2020</h3>
+<h1>Blink</h1>
+<p>Written By: <span class="author">Ahaan Dabholkar</span></p>
+
+<p>Well let’s try to blink the onboard <code class="highlighter-rouge">ACT</code> led. <a href="https://github.com/dwelch67/raspberrypi/tree/master/blinker01">@dwelch67</a> did the same thing on the Raspberry Pi with the <code class="highlighter-rouge">BCM2835</code>SoC and I have referred to his code almost completely. The source code files can be found in the repo in the <code class="highlighter-rouge">blink</code> directory.
+<!--more-->
+The <code class="highlighter-rouge">BCM2835</code> has its onboard <code class="highlighter-rouge">ACT</code> led connected to <code class="highlighter-rouge">GPIO16</code> pin, triggering which, turns on/off the led.</p>
+<blockquote>
+  <p><em>How do we know that <code class="highlighter-rouge">GPIO16</code> is the one ?</em></p>
+</blockquote>
+
+<p>Well Broadcom basically told us. They released the full schematics of the Raspberry Pi<sup><a href="https://www.raspberrypi.org/app/uploads/2012/04/Raspberry-Pi-Schematics-R1.0.pdf">[1]</a></sup> which clearly show the <code class="highlighter-rouge">GPIO16</code> getting mapped to the <code class="highlighter-rouge">STATUS_LED_N</code>. 
+No such luck with the RPi4 though. The released <em>reduced</em> schematics<sup><a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_4b_4p0_reduced.pdf">[2]</a></sup> are laughably bad for this and hence of no use. Moreover, the <code class="highlighter-rouge">ACT</code> led is mapped to the <code class="highlighter-rouge">eMMC</code> activity and is a cruel tantalizer. However, this <strong>blog</strong><sup><a href="https://www.valvers.com/open-software/raspberry-pi/bare-metal-programming-in-c-part-1/">[3]</a></sup> takes an interesting approach by analysing the kernel device tree source <code class="highlighter-rouge">(*dts)</code> file<sup><a href="https://github.com/raspberrypi/linux/blob/rpi-4.19.y/arch/arm/boot/dts/bcm2711-rpi-4-b.dts">[4]</a></sup>, which leads us to <code class="highlighter-rouge">GPIO42</code>.</p>
+<blockquote>
+  <p><img width="470" alt="gpio42" src="https://user-images.githubusercontent.com/32961084/87415214-71c55b80-c5ea-11ea-96fa-b71a5d92890d.png" /></p>
+
+  <p><sub><code class="highlighter-rouge">arch/arm/boot/dts/bcm2711-rpi-4-b.dts</code><sub></sub></sub></p>
+</blockquote>
+
+<p>Just to test it out, lets run a python script to toggle the <code class="highlighter-rouge">ACT</code> led by manipulating <code class="highlighter-rouge">GPIO42</code>.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="k">as</span> <span class="n">GPIO</span>
+<span class="n">GPIO</span><span class="p">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="p">.</span><span class="n">BCM</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="n">GPIO</span><span class="p">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="p">.</span><span class="n">output</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="n">GPIO</span><span class="p">.</span><span class="n">HIGH</span><span class="p">)</span>
+<span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="p">.</span><span class="n">output</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="n">GPIO</span><span class="p">.</span><span class="n">LOW</span><span class="p">)</span>
+</code></pre></div></div>
+<h1 id="-it-works-">🍻 It works !!!</h1>
+
+<p>Observe that the <code class="highlighter-rouge">ACT</code> led turns on and off. In fact even if the <code class="highlighter-rouge">GPIO.output(42, GPIO.LOW)</code> is commented out, the <code class="highlighter-rouge">ACT</code> led still die out after a few seconds. This is <strong>probably</strong> because of the interference with the <code class="highlighter-rouge">eMMC</code> trigger. This can be rectified by reassigning the <code class="highlighter-rouge">ACT</code> led to some other pin <em>(16)</em> by adding a device tree directive<sup><a href="https://www.raspberrypi.org/documentation/configuration/device-tree.md">[5]</a></sup> -</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dtparam=aci_led_gpio=16
+</code></pre></div></div>
+<p>in the <code class="highlighter-rouge">config.txt</code> file in the <code class="highlighter-rouge">boot</code> partition of the SD card.</p>
+
+<h2 id="direct-register-manipulation">Direct Register Manipulation</h2>
+<p>The following C code is supposed to toggle <code class="highlighter-rouge">GPIO42</code> on &amp; off by writing to the registers mapped to the <code class="highlighter-rouge">GPIO42</code> pin. The addresses of the registers, functions details etc. are all mentioned in the <strong>ARM Peripherals</strong><sup><a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711/rpi_DATA_2711_1p0.pdf">[6]</a></sup> doc. Memory Mapped GPIOs are basically used as follows -</p>
+<ul>
+  <li>Select the appropriate functions for the GPIO pins using the <code class="highlighter-rouge">GPFSEL{n}</code> registers</li>
+  <li>Set / Clear the pins using <code class="highlighter-rouge">GPSET/GPCLR</code></li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th><code class="highlighter-rouge">Warning</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Do Note that the doc has errors. It lists the <code class="highlighter-rouge">GPIO</code> register base address as <code class="highlighter-rouge">0x7E21 5000</code>, which is wrong. The base address is at low peripheral mode addressed <code class="highlighter-rouge">OxFE20 0000</code> or legacy <code class="highlighter-rouge">0x7E20 0000</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<pre><code class="language-C">#include&lt;stdint.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;fcntl.h&gt;
+#include&lt;unistd.h&gt;
+#include&lt;sys/mman.h&gt;
+#include&lt;sys/stat.h&gt;
+#include&lt;stdio.h&gt;
+#include&lt;stddef.h&gt;
+
+#define SIZE 4096
+#define GPIO_BASE 0xfe200000
+#define GPFSEL4 0x4
+#define GPSET1 0x8
+#define GPCLR1 0xb
+
+volatile uint32_t* gpio_base;
+
+int main()
+{
+	int fd;
+	if((fd = open("/dev/mem", O_RDWR|O_SYNC)) &lt; 0 )
+		{
+			printf("/dev/mem Not Opened \n");
+			return -1;
+		}
+	gpio_base = (uint32_t*)mmap(NULL, SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_BASE);
+	printf("MMAP DONE %p \n", gpio_base);
+	printf("GPFSEL4: %u\n", gpio_base[GPFSEL4]);
+	gpio_base[GPFSEL4] &amp;= ~(7 &lt;&lt; 6);
+	gpio_base[GPFSEL4] |= 1 &lt;&lt; 6 ;
+	printf("MODGPFSEL4: %d\n", gpio_base[GPFSEL4]);
+	
+	while(1){
+		gpio_base[GPSET1] = (1 &lt;&lt; 10);
+		sleep(1);
+		gpio_base[GPCLR1] = (1 &lt;&lt; 10);
+		sleep(1);
+		}
+	return 0;
+}
+
+</code></pre>
+
+<h3 id="what-the-code-is-essentially-doing">What the code is essentially doing</h3>
+
+<p><code class="highlighter-rouge">gpio_base[GPFSEL4] &amp;= ~(7 &lt;&lt; 6);</code> sets <code class="highlighter-rouge">bits 6-8</code> to <code class="highlighter-rouge">0</code> and is sometimes referred to as <em>cleaning</em>. We consider those specific bits as <code class="highlighter-rouge">GPIO42</code> is controlled by <code class="highlighter-rouge">GPFSEL4[6:8]</code></p>
+
+<p><code class="highlighter-rouge">gpio_base[GPFSEL4] |= 1 &lt;&lt; 6 ;</code> sets it as an <em>output</em> pin.</p>
+
+<p><code class="highlighter-rouge">gpio_base[GPSET1] = (1 &lt;&lt; 10);</code> pulls the pin high(or low)</p>
+
+<p>Compile the above program and run it as root (to register a memory map for <code class="highlighter-rouge">/dev/mem</code>).</p>
+
+<h2 id="baremetal">Baremetal</h2>
+<p>This involves writing a custom <code class="highlighter-rouge">kernel7l.img</code> file which is very similar to the above program. We’ll still be using <code class="highlighter-rouge">32 bit low peripheral mode addresses</code> as that is what the ARM is configured to handle <em>by default</em>. Note that since this time, we will be running our script without a kernel ( our script will be the kernel ) and hence shall need to compile and link it appropriately. I have provided two separate implementations, one discussed below and the other borrowing from <a href="https://github.com/dwelch67/raspberrypi/tree/master/blinker01">@dwelch67</a></p>
+
+<p>To compile these examples, I used a cross-compiler from the <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads">ARM Embedded Toolchain</a></p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define GPIO_BASE 0xFE200000
+#define GPFSEL4 0x4
+#define GPSET1 0x8
+#define GPCLR1 0xB
+</span>
+<span class="k">volatile</span> <span class="kt">unsigned</span> <span class="kt">int</span><span class="o">*</span> <span class="n">gpio_base</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="o">*</span> <span class="p">)</span><span class="n">GPIO_BASE</span><span class="p">;</span>
+<span class="k">volatile</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">time</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">__attribute__</span><span class="p">((</span><span class="kr">naked</span><span class="p">));</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">gpio_base</span><span class="p">[</span><span class="n">GPFSEL4</span><span class="p">]</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="mi">7</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span><span class="p">);</span>
+	<span class="n">gpio_base</span><span class="p">[</span><span class="n">GPFSEL4</span><span class="p">]</span> <span class="o">|=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span><span class="p">);</span>
+	<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">for</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">time</span><span class="o">&lt;</span><span class="mi">50000</span><span class="p">;</span> <span class="n">time</span><span class="o">++</span><span class="p">);</span>
+		<span class="n">gpio_base</span><span class="p">[</span><span class="n">GPSET1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">10</span><span class="p">);</span>
+
+		<span class="k">for</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">time</span><span class="o">&lt;</span><span class="mi">50000</span><span class="p">;</span> <span class="n">time</span><span class="o">++</span><span class="p">);</span>
+		<span class="n">gpio_base</span><span class="p">[</span><span class="n">GPCLR1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">10</span><span class="p">);</span>
+
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">Makefile</code> for the above script is</p>
+
+<pre><code class="language-shellscript">ARMGNU ?= arm-none-eabi
+
+COPS = -nostartfiles -mfloat -abi=hard -mfpu=crypto-neon-fp-armv8 -march=armv8-a+crc -mcpu=cortex-a72
+
+all : kernel7l.img
+
+clean:
+	rm -f *.o
+	rm -f *.bin
+	rm -f *.elf
+	rm -f *.list
+	rm -f *.img
+
+blinker.o : blinker.c
+	$(ARMGNU)-gcc $(COPS) -c blinker.c -o blinker.o
+
+kernel7l.img : blinker.o
+	$(ARMGNU)-ld blinker.o -o blinker.elf
+	$(ARMGNU)-objcopy blinker.elf -O binary kernel7l.img		
+</code></pre>
+
+<p>Make sure, that the <code class="highlighter-rouge">$PATH</code> variable has the location of the cross-compiler after which navigate to the directory contating the <code class="highlighter-rouge">Makefile</code> and execute</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make
+</code></pre></div></div>
+<p>And the <code class="highlighter-rouge">.img</code> file should compile</p>
+
+<h2 id="references">References</h2>
+<ol>
+  <li><a href="https://www.raspberrypi.org/app/uploads/2012/04/Raspberry-Pi-Schematics-R1.0.pdf">https://www.raspberrypi.org/app/uploads/2012/04/Raspberry-Pi-Schematics-R1.0.pdf</a></li>
+  <li><a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_4b_4p0_reduced.pdf">https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_4b_4p0_reduced.pdf</a></li>
+  <li><a href="https://www.valvers.com/open-software/raspberry-pi/bare-metal-programming-in-c-part-1/">https://www.valvers.com/open-software/raspberry-pi/bare-metal-programming-in-c-part-1/</a></li>
+  <li><a href="https://github.com/raspberrypi/linux/blob/rpi-4.19.y/arch/arm/boot/dts/bcm2711-rpi-4-b.dts">https://github.com/raspberrypi/linux/blob/rpi-4.19.y/arch/arm/boot/dts/bcm2711-rpi-4-b.dts</a></li>
+  <li><a href="https://www.raspberrypi.org/documentation/configuration/device-tree.md">https://www.raspberrypi.org/documentation/configuration/device-tree.md</a></li>
+  <li><a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711/rpi_DATA_2711_1p0.pdf">https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711/rpi_DATA_2711_1p0.pdf</a></li>
+</ol>
+
+    </div>
+
+    <div class="spacer"></div>
+    
+   <section class="footer">
+    <div class="container">
+        <div class="row">
+        
+            <div class="four columns">
+                <h2>de.ci.phe.red<div class="name-small">LABS</div></h2>
+                <div class="row">
+                    <p class="small"> &copy Copyright de.ci.phe.red LABS 2020</p>
+                </div>
+            </div>
+            <div class="four columns">
+                <!-- 
+                    
+                    <a href = "http://localhost:4000/" class="small"><li>Home</li></a>
+                    
+                    <a href = "http://localhost:4000/research.html" class="small"><li>Research</li></a>
+                    
+                    <a href = "http://localhost:4000/team.html" class="small"><li>Team</li></a>
+                    
+                    <a href = "http://localhost:4000/pubs.html" class="small"><li>Publications</li></a>
+                    
+                    <a href = "http://localhost:4000/blog.html" class="small"><li>Blog</li></a>
+                    
+                    <a href = "http://localhost:4000/contact.html" class="small"><li>Contact</li></a>
+                     -->
+            &nbsp;
+            </div>
+        <div class="four columns">
+            <h3 class="small">FORK! FOLLOW! FAULT! &infin;</h3>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="github-button" href="https://github.com/de-ci-phe-red-LABS" data-color-scheme="no-preference: light; light: light; dark: dark;"  aria-label="de.ci.phe.red on GitHub">@de-ci-phe-red-LABS On GitHub</a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
