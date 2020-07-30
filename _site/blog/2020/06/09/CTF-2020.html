@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<head>
+    <head>  
+    <meta charset="utf-8">
+   
+    <meta name="description" content>
+    <meta name="author" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:200,400,600&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/normalize.css">
+    <link rel="stylesheet" href="/assets/css/skeleton.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    
+    <!-- Mathjax Support -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          jax: ["input/TeX", "output/HTML-CSS"],
+          tex2jax: {
+            inlineMath: [ ['$', '$'], ["\\(", "\\)"] ],
+            displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+          //,
+          //displayAlign: "left",
+          //displayIndent: "2em"
+        });
+      </script>
+    <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="/assets/js/site.js"></script>
+
+   
+</head>
+    <title>CTF 2020 | de.ci.phe.red</title>
+    
+    <link rel="stylesheet" href="/assets/css/style_blog.css">
+    
+    
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-spacer"></div>
+<nav class="navbar">
+            <div class="container">
+                <ul class="navbar-list">
+                    
+                    
+                    <a href = "http://localhost:4000/" class="navbar-item"><li>HOME</li></a>
+                    
+                    <a href = "http://localhost:4000/research.html" class="navbar-item"><li>RESEARCH</li></a>
+                    
+                    <a href = "http://localhost:4000/team.html" class="navbar-item"><li>TEAM</li></a>
+                    
+                    <a href = "http://localhost:4000/pubs.html" class="navbar-item"><li>PUBLICATIONS</li></a>
+                    
+                    <a href = "http://localhost:4000/blog.html" class="navbar-item"><li>BLOG</li></a>
+                    
+                    <a href = "http://localhost:4000/contact.html" class="navbar-item"><li>CONTACT</li></a>
+                    
+                </ul>
+            </div>
+</nav>
+<div class="spacer-small"></div>
+<h3 class="heading">Jun 09, 2020</h3>
+<h1>CTF 2020</h1>
+<p>Written By: <span class="author">Harshvardhan Patel</span></p>
+
+<p><img src="http://de.ci.phe.red/assets/images/logo.jpg" width="200" /></p>
+
+<p>Frenzied keystrokes, intense brainstorming, shrieks of eureka and sighs of dismay - were all at display on a chilly night of February 24, 2020. With participants huddled as a tean in their hostel rooms,<!--more--> everyone raced against time to capture 12 flags hidden in 12 problem statements provided by de.ci.phe.red LAB as part of the first ever Capture The Flag (CTF) Contest to be hosted at IIT Bhilai.</p>
+<h2 id="capture-the-fla-wait-what">Capture The Fla…? Wait What?</h2>
+<p>For starters, Capture The Flag competitions, widely known as simply CTFs are competitions which require participants to compute a secret flag (usually a <code class="highlighter-rouge">string</code> or an <code class="highlighter-rouge">integer</code> value) which is obfuscated and embedded inside one or more of the following:
+    - <code class="highlighter-rouge">object code</code>, 
+    - <code class="highlighter-rouge">image headers</code>, 
+    - <code class="highlighter-rouge">HTTP requests</code> etc. 
+The problem statement includes the above resources containing the secret flag, followed by a paragraph providing context for the flag and some pointers on how to query the above resources as a black box. 
+In case of a <code class="highlighter-rouge">binary file</code>, canditates might first run the file and notice some outputs. The <code class="highlighter-rouge">binary file</code> might ask for a password. Since the password is secret, the candidates might choose to view the <code class="highlighter-rouge">disassembled code</code> of the binary in order to check for any <code class="highlighter-rouge">hardcoded</code> strings. Maybe they find a human readable string that makes sense, and submit it as a flag. But to their dismay, they might be greeted with a wrong answer on the <code class="highlighter-rouge">CTF Submission Portal</code>. And hence, the cycle repeats of scraping shovels against a wall untill they find a weak spot (an input which crashes the <code class="highlighter-rouge">executable</code>) and are able to find another potential flag.</p>
+
+<h2 id="relevance-of-ctfs">Relevance of CTFs?</h2>
+<p>As one might notice, the domain underlying a CTF problem is very open-ended and that virtually any piece of software can be programmed as a CTF challenge. Hence, a top CTF problem solver would mostly need to know how to <code class="highlighter-rouge">reverse engineer</code> a piece of tech. For the same he would need exposure to myriad tools like debuggers, disassemblers, network-packet analyzers, web-page inspection etc. Furthermore, CTFs are the starting points to Bug Bounties (or White Hat Hacking) in which participants are invited to find <code class="highlighter-rouge">(fatal) bugs</code> in the state-of-the-art software written by tech giants.</p>
+
+<h2 id="motivation-behind-hosting-a-ctf">Motivation behind hosting a CTF</h2>
+<p>At de.ci.phe.red LAB, we are dedicated towards exploring vulnerabilities in the concepts and implementations that support the digital world. Solving CTFs is a great way to orient one’s technical arsenal towards finding out the breaking points of digital systems and subsequently fixing them. Hence, aligning with the spirit of our LAB and leveraging the curiosity of the human mind to peer beyond what visible, we took a step forward to host a CTF competition with the aim of learning as well as spreading awareness about the vibrant CTF community.</p>
+
+<h2 id="deciphered-lab-ctf">de.ci.phe.red LAB CTF</h2>
+<p>The de.ci.phe.red LAB CTF was hosted completely online, on the platform powered by Techtud - an interactive online classroom and teaching portal. The main contest held on February 24 was preceeded by an orientation session for all the participants, briefing them on what to expect and how to prepare.</p>
+<h3 id="the-competition">The Competition</h3>
+<p>The CTF contest was held across 24 hours with new questions of increasing difficulty being added up untill 10 hours into the round. The following points summarize the de.ci.phe.red LAB CTF:</p>
+<ul>
+  <li>12 Problem Statements</li>
+  <li>Points diminishing with increase in number of correct submissions of a problem statement (The most solved problem statement will be worth lesser points to someone who solves it next)</li>
+  <li>More than 20 teams consisting of 60+ students as participants</li>
+  <li>Atleast 15 teams solved atleast one question in the contest</li>
+  <li>3 Teams were able to correctly solve 11 questions</li>
+  <li>Problem statements spanned domains such as <code class="highlighter-rouge">image forensics</code>, <code class="highlighter-rouge">reverse engineering gcc/g++ binaries</code>, <code class="highlighter-rouge">cryptography</code>, <code class="highlighter-rouge">web technologies</code> and <code class="highlighter-rouge">pattern predictions</code></li>
+</ul>
+
+<h4 id="deciphered-ctf-archived">de.ci.phe.red CTF Archived</h4>
+<p>For furure reference, we have archived the problem statements and their solutions on <code class="highlighter-rouge">Github</code>. Interested readers are encouraged to go through the resources and share their feedback on the same. The following are the relevant links:</p>
+<ul>
+  <li><a href="https://github.com/de-ci-phe-red-LABS/ctf-1">Problem Statements</a></li>
+  <li><a href="https://github.com/de-ci-phe-red-LABS/ctf-1/tree/master/solutions">Solutions</a></li>
+  <li><a href="https://github.com/de-ci-phe-red-LABS/ctf-1/tree/master/solutions">Reverse Engineering Binary Source Code</a></li>
+</ul>
+
+<h2 id="reception-and-results">Reception and Results</h2>
+<p>The competition is one of the flagship activities of de.ci.phe.red LAB at IIT Bhilai. Hence, this was an opportunity for us to introduce ourselves to the student community in a more interactive fashion. The reception was overwhelming, with over 60 participants enrolling for the competition, organizing themselves in teams of 3 or 4. The competition offered atleast something to take-away in terms of knowledge for all the batches of study. For many, this contest served as an intitaion into the world of CTFs.
+The top 3 teams were chosen as winners of the competition. The prize distribution was to be held in-campus in presence of the LAB lead Dr. Dhiman Saha, but due to he unprecented scenario created by the pandemic, it was decided, in consultation with the winners, to have a <code class="highlighter-rouge">Virtual Prize Distribution</code> ceremony.</p>
+
+    </div>
+
+    <div class="spacer"></div>
+    
+   <section class="footer">
+    <div class="container">
+        <div class="row">
+        
+            <div class="four columns">
+                <h2>de.ci.phe.red<div class="name-small">LABS</div></h2>
+                <div class="row">
+                    <p class="small"> &copy Copyright de.ci.phe.red LABS 2020</p>
+                </div>
+            </div>
+            <div class="four columns">
+                <!-- 
+                    
+                    <a href = "http://localhost:4000/" class="small"><li>Home</li></a>
+                    
+                    <a href = "http://localhost:4000/research.html" class="small"><li>Research</li></a>
+                    
+                    <a href = "http://localhost:4000/team.html" class="small"><li>Team</li></a>
+                    
+                    <a href = "http://localhost:4000/pubs.html" class="small"><li>Publications</li></a>
+                    
+                    <a href = "http://localhost:4000/blog.html" class="small"><li>Blog</li></a>
+                    
+                    <a href = "http://localhost:4000/contact.html" class="small"><li>Contact</li></a>
+                     -->
+            &nbsp;
+            </div>
+        <div class="four columns">
+            <h3 class="small">FORK! FOLLOW! FAULT! &infin;</h3>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="github-button" href="https://github.com/de-ci-phe-red-LABS" data-color-scheme="no-preference: light; light: light; dark: dark;"  aria-label="de.ci.phe.red on GitHub">@de-ci-phe-red-LABS On GitHub</a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
